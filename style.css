@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.card-container {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  perspective: 1500px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+  color: #fff;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+  padding: 40px 30px;
+  color: #333;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin: 0 auto 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 50px;
+  height: 3px;
+  background: white;
+  margin: 20px auto;
+  border-radius: 3px;
+}
+
+.back-divider {
+  width: 50px;
+  height: 3px;
+  background: #a777e3;
+  margin: 15px 0;
+  border-radius: 3px;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background: #f5f7fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: #6e68fb;
+  font-size: 18px;
+}
+
+.contact-text {
+  font-size: 16px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #6e68fb 0%, #a777e3 100%);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #6e68fb;
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    height: 450px;
+  }
+
+  .card-front,
+  .card-back {
+    padding: 30px 20px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}
